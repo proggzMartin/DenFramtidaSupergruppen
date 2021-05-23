@@ -5,33 +5,8 @@ Hur ni organiserar er är bestämt men vad ni jobbar med och hur ni jobbar under
 
 =====================
 
-Agila Arbetssätt  & roller.pptx 
+Stakeholders inledande beskrivning:
 
-Övning 
-
-1. Dela ut rollen av Stakeholder, Product Owner och Scrum Master 
-
-2. Skapa privat repo för gruppen inne på GitHub organisationen. Se till att alla har tillgång.
-
- 
-
-
-
-5. För denna veckan ska ni bara fylla ”Backlog” kolumnen i “Backlog” projektet med User Stories för just erat projekt. GitHub Issues ska användas istället för kort funktionaliteten. 
-
-5.1 Stakeholder har sista ordet för önskemål/vision av projektet. Det gäller att ha en tydlig fantasi. 
-
-5.2 PO tolkar Stakeholders vision och har sista ordet om User Stories samt ska kunna hela backloggen. (Nästa vecka kommer ni att gå igenom backloggen och värdesätta/prioritera alla User Stories samt planera inför sprinten) 
-
-5.3 Scrum Master ska plugga Scrum pdf:en tills nästa vecka 
-
-////////////// AVKLARADE DELMOMENT NEDAN \\\\\\\\\\\\\
-
-
-3. Skapa ett projekt nämnt ”Backlog” och koppla det till grupprepot 
-Se till att det finns fyra kolumner nämnda: ”User Stories”, “Redo att estimeras”, “Redo för Sprint” och “Nästa Sprint” 
-
-4. Skapa ett till projekt nämnt ”Sprint” och koppla det till grupprepot 
-Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “Done” 
+Stakeholder efterfrågar en mjukvara där denne kan mata in recept. Man vill kunna skriva in ingredienser och välja bland dessa för mina recept. Man ska kunna ange hur mycket av en ingrediens som ska användas i ett recept. Man ska kunna skriva steg för steg olika moment som ska utföras tills dess att man blir färdig.
 
 =====================
