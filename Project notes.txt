@@ -13,8 +13,7 @@ Agila Arbetssätt  & roller.pptx
 
 2. Skapa privat repo för gruppen inne på GitHub organisationen. Se till att alla har tillgång.
 
-3. Skapa ett projekt nämnt ”Backlog” och koppla det till grupprepot 
-Se till att det finns fyra kolumner nämnda: ”User Stories”, “Redo att estimeras”, “Redo för Sprint” och “Nästa Sprint”  
+ 
 
 4. Skapa ett till projekt nämnt ”Sprint” och koppla det till grupprepot 
 Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “Done” 
@@ -29,5 +28,8 @@ Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “
 
 ////////////// AVKLARADE DELMOMENT NEDAN \\\\\\\\\\\\\
 
+
+3. Skapa ett projekt nämnt ”Backlog” och koppla det till grupprepot 
+Se till att det finns fyra kolumner nämnda: ”User Stories”, “Redo att estimeras”, “Redo för Sprint” och “Nästa Sprint” 
 
 =====================
