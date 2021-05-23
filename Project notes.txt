@@ -1,0 +1,33 @@
+-=! Project Notes !=-
+=====================
+
+Hur ni organiserar er är bestämt men vad ni jobbar med och hur ni jobbar under dessa 3 iterationer är helt upp till er i gruppen. 
+
+=====================
+
+Agila Arbetssätt  & roller.pptx 
+
+Övning 
+
+1. Dela ut rollen av Stakeholder, Product Owner och Scrum Master 
+
+2. Skapa privat repo för gruppen inne på GitHub organisationen. Se till att alla har tillgång.
+
+3. Skapa ett projekt nämnt ”Backlog” och koppla det till grupprepot 
+Se till att det finns fyra kolumner nämnda: ”User Stories”, “Redo att estimeras”, “Redo för Sprint” och “Nästa Sprint”  
+
+4. Skapa ett till projekt nämnt ”Sprint” och koppla det till grupprepot 
+Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “Done” 
+
+5. För denna veckan ska ni bara fylla ”Backlog” kolumnen i “Backlog” projektet med User Stories för just erat projekt. GitHub Issues ska användas istället för kort funktionaliteten. 
+
+5.1 Stakeholder har sista ordet för önskemål/vision av projektet. Det gäller att ha en tydlig fantasi. 
+
+5.2 PO tolkar Stakeholders vision och har sista ordet om User Stories samt ska kunna hela backloggen. (Nästa vecka kommer ni att gå igenom backloggen och värdesätta/prioritera alla User Stories samt planera inför sprinten) 
+
+5.3 Scrum Master ska plugga Scrum pdf:en tills nästa vecka 
+
+////////////// AVKLARADE DELMOMENT NEDAN \\\\\\\\\\\\\
+
+
+=====================
