@@ -15,8 +15,7 @@ Agila Arbetssätt  & roller.pptx
 
  
 
-4. Skapa ett till projekt nämnt ”Sprint” och koppla det till grupprepot 
-Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “Done” 
+
 
 5. För denna veckan ska ni bara fylla ”Backlog” kolumnen i “Backlog” projektet med User Stories för just erat projekt. GitHub Issues ska användas istället för kort funktionaliteten. 
 
@@ -31,5 +30,8 @@ Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “
 
 3. Skapa ett projekt nämnt ”Backlog” och koppla det till grupprepot 
 Se till att det finns fyra kolumner nämnda: ”User Stories”, “Redo att estimeras”, “Redo för Sprint” och “Nästa Sprint” 
+
+4. Skapa ett till projekt nämnt ”Sprint” och koppla det till grupprepot 
+Se till att det finns tre kolumner nämnda: ”ToDo”, “Pågående” och “Done” 
 
 =====================
