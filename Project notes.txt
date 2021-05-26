@@ -5,8 +5,6 @@ Hur ni organiserar er är bestämt men vad ni jobbar med och hur ni jobbar under
 
 =====================
 
-Stakeholders inledande beskrivning:
 
-Stakeholder efterfrågar en mjukvara där denne kan mata in recept. Man vill kunna skriva in ingredienser och välja bland dessa för mina recept. Man ska kunna ange hur mycket av en ingrediens som ska användas i ett recept. Man ska kunna skriva steg för steg olika moment som ska utföras tills dess att man blir färdig.
 
 =====================
