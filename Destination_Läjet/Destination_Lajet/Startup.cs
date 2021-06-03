@@ -7,6 +7,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Destination_Lajet.Data;
 using Destination_Lajet.Models;
+using Destination_Lajet.Services;
+using Destination_Lajet.Interfaces;
 
 namespace Destination_Lajet
 {
@@ -29,6 +31,8 @@ namespace Destination_Lajet
                 .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<LajetContext>();
             services.AddRazorPages();
+
+            services.AddScoped<IDbService, DbService>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
