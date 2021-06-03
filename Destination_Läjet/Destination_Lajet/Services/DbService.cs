@@ -79,7 +79,6 @@ namespace Destination_Lajet.Services
             var c = _db.Company
                         .Include(x => x.Ads)
                         .Include(x => x.Users);
-
         }
 
         public void RemoveUser(int id)
