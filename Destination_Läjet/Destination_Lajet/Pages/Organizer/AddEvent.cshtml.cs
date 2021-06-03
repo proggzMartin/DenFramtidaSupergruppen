@@ -31,7 +31,7 @@ namespace Destination_Lajet.Pages.Organizer
         }
 
         [BindProperty]
-        public Advertisement Event { get; set; }
+        public Ad Event { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

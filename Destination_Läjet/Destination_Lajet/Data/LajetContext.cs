@@ -13,7 +13,7 @@ namespace Destination_Lajet.Data
 
         public DbSet<Company> Company { get; set; }
 
-        public DbSet<Advertisement> Advertisement { get; set; }
+        public DbSet<Ad> Ad { get; set; }
         public DbSet<User> User { get; set; }
 
         public async Task Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)

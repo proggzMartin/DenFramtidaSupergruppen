@@ -20,11 +20,11 @@ namespace Destination_Lajet.Pages
             _context = context;
         }
 
-        public IList<Advertisement> Event { get; set; }
+        public IList<Ad> Event { get; set; }
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Advertisement.ToListAsync();
+            Event = await _context.Ad.ToListAsync();
         }
     }
 }

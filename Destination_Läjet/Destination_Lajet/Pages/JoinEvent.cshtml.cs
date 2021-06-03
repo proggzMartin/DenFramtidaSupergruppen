@@ -26,7 +26,7 @@ namespace Destination_Lajet.Pages
 
         }
 
-        public Advertisement Event { get; set; }
+        public Ad Event { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -35,7 +35,7 @@ namespace Destination_Lajet.Pages
                 return NotFound();
             }
 
-            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Ad.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
@@ -47,7 +47,7 @@ namespace Destination_Lajet.Pages
         }
 
         [BindProperty]
-        public Advertisement MyEvent { get; set; }
+        public Ad MyEvent { get; set; }
         public async Task<IActionResult> OnPostAsync(int? id)
         {
             if (id == null)
@@ -56,7 +56,7 @@ namespace Destination_Lajet.Pages
             }
             var userId = _userManager.GetUserId(User);
             //var user = await _context.User.Where(u => u.Id == userId).Include(u => u.JoinedEvents).FirstOrDefaultAsync();
-            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Ad.FirstOrDefaultAsync(m => m.Id == id);
 
             //Event.SpotsAvailable--;
 

@@ -24,7 +24,7 @@ namespace Destination_Lajet.Pages
             _userManager = userManager;
         }
 
-        public IList<Advertisement> Event { get; set; }
+        public IList<Ad> Event { get; set; }
 
         public async Task OnGetAsync()
         {

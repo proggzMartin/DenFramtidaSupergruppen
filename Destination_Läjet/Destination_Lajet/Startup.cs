@@ -22,11 +22,11 @@ namespace Destination_Lajet
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<LajetContext>(options =>
-                options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+
             services.AddDatabaseDeveloperPageExceptionFilter();
-            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true).
-                AddRoles<IdentityRole>()
+            services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<LajetContext>();
             services.AddRazorPages();
         }
