@@ -15,10 +15,10 @@ namespace Destination_Lajet.Pages
     [Authorize]
     public class MyEventsModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
         private readonly UserManager<User> _userManager;
 
-        public MyEventsModel(ApplicationDbContext context, UserManager<User> userManager)
+        public MyEventsModel(LajetContext context, UserManager<User> userManager)
         {
             _context = context;
             _userManager = userManager;

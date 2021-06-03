@@ -15,11 +15,11 @@ namespace Destination_Lajet.Pages.Organizer
     [Authorize(Roles = "Organizer")]
     public class OrganizeEventModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
         private readonly UserManager<User> _userManager;
 
 
-        public OrganizeEventModel(ApplicationDbContext context, UserManager<User> userManager)
+        public OrganizeEventModel(LajetContext context, UserManager<User> userManager)
         {
             _context = context;
             _userManager = userManager;

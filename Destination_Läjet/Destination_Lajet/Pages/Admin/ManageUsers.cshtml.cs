@@ -15,10 +15,10 @@ namespace Destination_Lajet.Pages.Admin
     [Authorize(Roles = "Admin")]
     public class ManageUsersModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
         public readonly UserManager<User> _userManager;
 
-        public ManageUsersModel(ApplicationDbContext context, UserManager<User> userManager)
+        public ManageUsersModel(LajetContext context, UserManager<User> userManager)
         {
             _context = context;
             _userManager = userManager;

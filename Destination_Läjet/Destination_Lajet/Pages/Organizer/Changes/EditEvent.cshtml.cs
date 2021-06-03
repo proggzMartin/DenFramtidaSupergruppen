@@ -12,9 +12,9 @@ namespace Destination_Lajet.Pages.Organizer.Changes
 {
     public class EditEventModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
 
-        public EditEventModel(ApplicationDbContext context)
+        public EditEventModel(LajetContext context)
         {
             _context = context;
         }
@@ -29,7 +29,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
@@ -70,7 +70,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
 
         private bool EventExists(int id)
         {
-            return _context.Event.Any(e => e.Id == id);
+            return _context.Advertisement.Any(e => e.Id == id);
         }
     }
 }

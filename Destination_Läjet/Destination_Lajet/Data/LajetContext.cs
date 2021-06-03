@@ -6,13 +6,14 @@ using System.Threading.Tasks;
 
 namespace Destination_Lajet.Data
 {
-    public class ApplicationDbContext : IdentityDbContext<User>
+    public class LajetContext : IdentityDbContext<User>
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-        }
-        public DbSet<Advertisement> Event { get; set; }
+        public LajetContext(DbContextOptions<LajetContext> options) : base(options)
+        { }
+
+        public DbSet<Company> Company { get; set; }
+
+        public DbSet<Advertisement> Advertisement { get; set; }
         public DbSet<User> User { get; set; }
 
         public async Task Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)

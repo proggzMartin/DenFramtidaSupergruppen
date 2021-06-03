@@ -14,9 +14,9 @@ namespace Destination_Lajet.Pages.Organizer.Changes
     [Authorize(Roles = "Organizer")]
     public class DeleteEventModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
 
-        public DeleteEventModel(ApplicationDbContext context)
+        public DeleteEventModel(LajetContext context)
         {
             _context = context;
         }
@@ -31,7 +31,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
@@ -47,11 +47,11 @@ namespace Destination_Lajet.Pages.Organizer.Changes
                 return NotFound();
             }
 
-            Event = await _context.Event.FindAsync(id);
+            Event = await _context.Advertisement.FindAsync(id);
 
             if (Event != null)
             {
-                _context.Event.Remove(Event);
+                _context.Advertisement.Remove(Event);
                 await _context.SaveChangesAsync();
             }
 

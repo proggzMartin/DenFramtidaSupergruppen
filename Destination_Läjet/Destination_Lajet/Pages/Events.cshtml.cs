@@ -13,9 +13,9 @@ namespace Destination_Lajet.Pages
 {
     public class EventsModel : PageModel
     {
-        private readonly Destination_Lajet.Data.ApplicationDbContext _context;
+        private readonly Destination_Lajet.Data.LajetContext _context;
 
-        public EventsModel(Destination_Lajet.Data.ApplicationDbContext context)
+        public EventsModel(Destination_Lajet.Data.LajetContext context)
         {
             _context = context;
         }
@@ -24,7 +24,7 @@ namespace Destination_Lajet.Pages
 
         public async Task OnGetAsync()
         {
-            Event = await _context.Event.ToListAsync();
+            Event = await _context.Advertisement.ToListAsync();
         }
     }
 }

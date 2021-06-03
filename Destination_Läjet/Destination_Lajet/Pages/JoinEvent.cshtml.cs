@@ -15,10 +15,10 @@ namespace Destination_Lajet.Pages
     [Authorize]
     public class JoinEventModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
         private readonly UserManager<User> _userManager;
 
-        public JoinEventModel(ApplicationDbContext context,
+        public JoinEventModel(LajetContext context,
             UserManager<User> userManager)
         {
             _context = context;
@@ -35,7 +35,7 @@ namespace Destination_Lajet.Pages
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
@@ -56,7 +56,7 @@ namespace Destination_Lajet.Pages
             }
             var userId = _userManager.GetUserId(User);
             var user = await _context.User.Where(u => u.Id == userId).Include(u => u.JoinedEvents).FirstOrDefaultAsync();
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
 
             Event.SpotsAvailable--;
 

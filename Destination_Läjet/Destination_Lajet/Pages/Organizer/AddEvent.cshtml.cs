@@ -16,9 +16,9 @@ namespace Destination_Lajet.Pages.Organizer
 
     public class AddEventModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
         private readonly UserManager<User> _userManager;
-        public AddEventModel(ApplicationDbContext context,
+        public AddEventModel(LajetContext context,
             UserManager<User> userManager)
         {
             _context = context;

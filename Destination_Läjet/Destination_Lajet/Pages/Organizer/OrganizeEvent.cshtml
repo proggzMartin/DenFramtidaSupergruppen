@@ -12,9 +12,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Event[0].Title)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Event[0].Description)
-            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Event[0].Place)
             </th>
@@ -37,9 +35,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.Place)
             </td>
@@ -53,9 +49,9 @@
                 @Html.DisplayFor(modelItem => item.SpotsAvailable)
             </td>
             <td>
-                │ <a asp-page="/Organizer/Changes/EditEvent" asp-route-id="@item.EventId">Edit</a> │
-                 <a asp-page="/Organizer/Changes/DetailsEvent" asp-route-id="@item.EventId">Details</a> │
-                 <a asp-page="/Organizer/Changes/DeleteEvent" asp-route-id="@item.EventId">Delete</a> │
+                │ <a asp-page="/Organizer/Changes/EditEvent"    asp-route-id="">Edit</a> │
+                 <a asp-page="/Organizer/Changes/DetailsEvent"  asp-route-id="">Details</a> │
+                 <a asp-page="/Organizer/Changes/DeleteEvent"   asp-route-id="">Delete</a> │
             </td>
         </tr>
         }

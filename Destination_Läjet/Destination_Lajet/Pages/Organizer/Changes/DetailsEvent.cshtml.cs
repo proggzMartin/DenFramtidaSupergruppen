@@ -12,9 +12,9 @@ namespace Destination_Lajet.Pages.Organizer.Changes
 {
     public class DetailsEventModel : PageModel
     {
-        private readonly ApplicationDbContext _context;
+        private readonly LajetContext _context;
 
-        public DetailsEventModel(ApplicationDbContext context)
+        public DetailsEventModel(LajetContext context)
         {
             _context = context;
         }
@@ -28,7 +28,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
+            Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
