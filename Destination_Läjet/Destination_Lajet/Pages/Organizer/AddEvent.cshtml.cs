@@ -39,20 +39,13 @@ namespace Destination_Lajet.Pages.Organizer
             if (ModelState.IsValid)
             {
                 var user = await _userManager.GetUserAsync(User);
-                Event.Organizer = user;
+                //Event.Organizer = user;
                 _context.Add(Event);
                 await _context.SaveChangesAsync();
                 return RedirectToPage("/Organizer/OrganizeEvent");
             }
 
             return Page();
-
-
-
-
-
-
-
         }
     }
 }

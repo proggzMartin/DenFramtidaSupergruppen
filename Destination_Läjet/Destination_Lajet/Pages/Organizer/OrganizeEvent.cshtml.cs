@@ -32,8 +32,8 @@ namespace Destination_Lajet.Pages.Organizer
         public async Task OnGetAsync()
         {
             var username = User.Identity.Name;
-            user = await _context.Users.Where(u => u.UserName == username).Include(h => h.HostedEvents).FirstOrDefaultAsync();
-            Event = user.HostedEvents.ToList();
+            //user = await _context.Users.Where(u => u.UserName == username).Include(h => h.HostedEvents).FirstOrDefaultAsync();
+            //Event = user.HostedEvents.ToList();
         }
     }
 }

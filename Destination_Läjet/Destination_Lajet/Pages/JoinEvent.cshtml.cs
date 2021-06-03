@@ -55,12 +55,12 @@ namespace Destination_Lajet.Pages
                 return NotFound();
             }
             var userId = _userManager.GetUserId(User);
-            var user = await _context.User.Where(u => u.Id == userId).Include(u => u.JoinedEvents).FirstOrDefaultAsync();
+            //var user = await _context.User.Where(u => u.Id == userId).Include(u => u.JoinedEvents).FirstOrDefaultAsync();
             Event = await _context.Advertisement.FirstOrDefaultAsync(m => m.Id == id);
 
-            Event.SpotsAvailable--;
+            //Event.SpotsAvailable--;
 
-            user.JoinedEvents.Add(Event);
+            //user.JoinedEvents.Add(Event);
 
             await _context.SaveChangesAsync();
             return RedirectToPage("/MyEvents");

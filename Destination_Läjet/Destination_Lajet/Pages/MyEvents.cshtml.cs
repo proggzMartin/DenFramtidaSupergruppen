@@ -30,9 +30,9 @@ namespace Destination_Lajet.Pages
         {
             var userId = _userManager.GetUserId(User);
 
-            var user = await _context.Users.Where(u => u.Id == userId).Include(u => u.JoinedEvents).FirstOrDefaultAsync();
+            //var user = await _context.Users.Where(u => u.Id == userId).Include(u => u.JoinedEvents).FirstOrDefaultAsync();
 
-            Event = user.JoinedEvents;
+            //Event = user.JoinedEvents;
 
 
         }

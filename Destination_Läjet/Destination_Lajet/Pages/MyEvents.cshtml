@@ -8,7 +8,7 @@
 <table class="table">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Event[0].Title)
             </th>
 
@@ -23,11 +23,11 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Event[0].SpotsAvailable)
-            </th>
+            </th>*@
             <th></th>
         </tr>
     </thead>
-    <tbody>
+    @*<tbody>
         @foreach (var item in Model.Event)
         {
 <tr>
@@ -52,5 +52,5 @@
     </td>
 
 </tr>}
-    </tbody>
+    </tbody>*@
 </table>
