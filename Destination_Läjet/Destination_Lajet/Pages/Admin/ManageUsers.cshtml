@@ -1,0 +1,56 @@
+﻿@page
+@model Destination_Lajet.Pages.Admin.ManageUsersModel
+
+@{
+    ViewData["Title"] = "UserManager";
+}
+
+<h1>ManageUsers</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Users[0].UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Users[0].Email)
+            </th>
+
+            <th>
+                <p>Is Organizer</p>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.Users)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+
+                <td>
+                    <form method="post">
+                        @if (await Model._userManager.IsInRoleAsync(item, "organizer"))
+                        {
+                            <input asp-route-id="@item.Id " type="submit" value="Organizer" class="btn btn-success active" />
+                        }
+                        else
+                        {
+                            <input asp-route-id="@item.Id " type="submit" value="Not Organizer" class="btn btn-primary disabled" />
+                        }
+
+
+                    </form>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,36 @@
+﻿@page
+@model IndexModel
+@using Microsoft.AspNetCore.Identity;
+@using Destination_Lajet.Models;
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
+@{ ViewData["Title"] = "Home page"; }
+
+<div class="d-flex justify-content-center py-5">
+    @if (SignInManager.IsSignedIn(User))
+    {
+<div class="text-center">
+    <h1 class="display-4">Welcome  @User.Identity.Name</h1>
+    <br />
+    <a asp-page="/Events" type="button" class="btn btn-outline-primary">Find A New Event!</a>
+
+</div> }
+else
+{
+<div class="text-center">
+    <img src="/lib/images/Dest Läjet Logo A.png" class="img-fluid" style="max-width: 450px"/>
+    <br />
+    <h4> Vänligen logga in för att se dina medlemsförmåner </h4>
+    <br />
+    <br />
+
+
+            <a asp-area="Identity" asp-page="/Account/Register">
+                <input type="button" class="btn btn-dark" value="Registrera">
+            </a> <a asp-area="Identity" asp-page="/Account/Login">
+                <input type="button" class="btn btn-dark" value="Logga in">
+            </a>
+        </div>
+    }
+</div>
