@@ -1,4 +1,5 @@
 ﻿using Destination_Lajet.Data;
+using Destination_Lajet.Exceptions;
 using Destination_Lajet.Interfaces;
 using Destination_Lajet.Models;
 using Microsoft.EntityFrameworkCore;
@@ -22,6 +23,9 @@ namespace Destination_Lajet.Services
         public void AddAd(Ad ad, int companyId)
         {
             var c = GetCompany(companyId, true);
+            if (c == null)
+                throw new DbException("Company not found.");
+
             c.Ads.Add(ad);
             _db.SaveChanges();
         }

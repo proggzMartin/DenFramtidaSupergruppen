@@ -8,8 +8,8 @@ namespace Destination_Lajet.Models
 
         public string Name { get; set; }
 
-        public List<Ad> Ads { get; set; }
+        public List<Ad> Ads { get; set; } = new List<Ad>();
 
-        public List<User> Users { get; set; }
+        public List<User> Users { get; set; } = new List<User>();
     }
 }
