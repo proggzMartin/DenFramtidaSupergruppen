@@ -20,7 +20,7 @@ namespace Destination_Lajet.Pages
             _context = context;
         }
 
-        public IList<Event> Event { get; set; }
+        public IList<Advertisement> Event { get; set; }
 
         public async Task OnGetAsync()
         {

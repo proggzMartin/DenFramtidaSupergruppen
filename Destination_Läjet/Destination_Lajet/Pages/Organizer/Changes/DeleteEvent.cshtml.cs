@@ -22,7 +22,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
         }
 
         [BindProperty]
-        public Event Event { get; set; }
+        public Advertisement Event { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -31,7 +31,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventId == id);
+            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {

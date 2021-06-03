@@ -11,7 +11,7 @@ namespace Destination_Lajet.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public List<Event> HostedEvents { get; set; }
-        public List<Event> JoinedEvents { get; set; }
+        public List<Advertisement> HostedEvents { get; set; }
+        public List<Advertisement> JoinedEvents { get; set; }
     }
 }

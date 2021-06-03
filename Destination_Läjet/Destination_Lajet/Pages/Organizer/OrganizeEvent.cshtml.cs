@@ -26,7 +26,7 @@ namespace Destination_Lajet.Pages.Organizer
 
         }
 
-        public IList<Event> Event { get; set; }
+        public IList<Advertisement> Event { get; set; }
         public User user { get; set; }
 
         public async Task OnGetAsync()

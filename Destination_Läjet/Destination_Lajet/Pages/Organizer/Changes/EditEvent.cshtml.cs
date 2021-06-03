@@ -20,7 +20,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
         }
 
         [BindProperty]
-        public Event Event { get; set; }
+        public Advertisement Event { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,7 +29,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
                 return NotFound();
             }
 
-            Event = await _context.Event.FirstOrDefaultAsync(m => m.EventId == id);
+            Event = await _context.Event.FirstOrDefaultAsync(m => m.Id == id);
 
             if (Event == null)
             {
@@ -55,7 +55,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EventExists(Event.EventId))
+                if (!EventExists(Event.Id))
                 {
                     return NotFound();
                 }
@@ -70,7 +70,7 @@ namespace Destination_Lajet.Pages.Organizer.Changes
 
         private bool EventExists(int id)
         {
-            return _context.Event.Any(e => e.EventId == id);
+            return _context.Event.Any(e => e.Id == id);
         }
     }
 }
