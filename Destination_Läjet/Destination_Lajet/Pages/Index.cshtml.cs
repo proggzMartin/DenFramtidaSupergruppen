@@ -21,7 +21,7 @@ namespace Destination_Lajet.Pages
 
         public void OnGet()
         {
-
+            //test
         }
     }
 }
