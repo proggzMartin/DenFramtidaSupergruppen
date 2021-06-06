@@ -20,14 +20,19 @@ namespace Destination_Lajet.Services
             _db = db;
         }
 
-        public void AddAd(Ad ad, int companyId)
+        public Ad AddAd(Ad ad, int companyId)
         {
             var c = GetCompany(companyId, true);
             if (c == null)
                 throw new DbException("Company not found.");
 
+            var addedAd = _db.Ad.Add(ad);
+            _db.SaveChanges();
+
             c.Ads.Add(ad);
             _db.SaveChanges();
+
+            return addedAd.Entity;
         }
 
         public void AddNewCompany(Company company)
@@ -58,11 +63,12 @@ namespace Destination_Lajet.Services
 
         public Company GetCompany(int id, bool tracking = false)
         {
-            return tracking ? _db.Company.FirstOrDefault(x => x.Id.Equals(id)) : 
-                              _db.Company.AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
+            var compsWithAds = _db.Company.Include(x => x.Ads);
+            return tracking ? compsWithAds.FirstOrDefault(x => x.Id.Equals(id)) :
+                              compsWithAds.AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
         }
 
-        public User GetUser(int id, bool tracking = false)
+        public User GetUser(string id, bool tracking = false)
         {
             return tracking ? _db.User.FirstOrDefault(x => x.Id.Equals(id)) :
                               _db.User.AsNoTracking().FirstOrDefault(x => x.Id.Equals(id));
@@ -85,7 +91,7 @@ namespace Destination_Lajet.Services
                         .Include(x => x.Users);
         }
 
-        public void RemoveUser(int id)
+        public void RemoveUser(string id)
         {
             _db.User.Remove(GetUser(id));
             _db.SaveChanges();

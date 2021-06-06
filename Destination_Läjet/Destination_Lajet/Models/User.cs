@@ -6,6 +6,6 @@ namespace Destination_Lajet.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Companyid { get; set; }
+        public int CompanyId { get; set; }
     }
 }
