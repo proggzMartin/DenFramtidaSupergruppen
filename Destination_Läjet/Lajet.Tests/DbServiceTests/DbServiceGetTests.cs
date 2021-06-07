@@ -1,5 +1,4 @@
-﻿using Destination_Lajet.Exceptions;
-using Destination_Lajet.Models;
+﻿using Destination_Lajet.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;

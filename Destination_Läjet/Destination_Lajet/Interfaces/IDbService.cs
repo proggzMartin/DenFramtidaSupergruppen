@@ -5,7 +5,7 @@ namespace Destination_Lajet.Interfaces
 {
     public interface IDbService
     {
-        Ad AddAd(Ad ad, int companyId);
+        void AddAd(Ad ad, int companyId);
         void AddNewCompany(Company company);
         void AddUser(User user, int companyId);
         IEnumerable<Company> GetAllCompanies(bool tracking = false);

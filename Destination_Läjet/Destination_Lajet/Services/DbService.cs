@@ -20,19 +20,17 @@ namespace Destination_Lajet.Services
             _db = db;
         }
 
-        public Ad AddAd(Ad ad, int companyId)
+        public void AddAd(Ad ad, int companyId)
         {
             var c = GetCompany(companyId, true);
             if (c == null)
                 throw new DbException("Company not found.");
 
-            var addedAd = _db.Ad.Add(ad);
+            _db.Ad.Add(ad);
             _db.SaveChanges();
 
             c.Ads.Add(ad);
             _db.SaveChanges();
-
-            return addedAd.Entity;
         }
 
         public void AddNewCompany(Company company)
@@ -76,7 +74,8 @@ namespace Destination_Lajet.Services
 
         public void RemoveAd(int id)
         {
-            _db.Ad.Remove(GetAd(id));
+            var a = GetAd(id);
+            _db.Ad.Remove(a); //ERROR TRACKING.
             _db.SaveChanges();
         }
 
