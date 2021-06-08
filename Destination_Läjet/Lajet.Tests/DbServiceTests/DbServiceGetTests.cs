@@ -28,6 +28,7 @@ namespace Lajet.Tests.DbServiceTests.GetTests
                 Assert.Equal(cId1, allCs.First().Id);
                 Assert.Contains(c1, cs);
                 Assert.Contains(c2, cs);
+                db.DetachAll();
             });
         }
 
@@ -50,6 +51,7 @@ namespace Lajet.Tests.DbServiceTests.GetTests
 
                 var gottenCompany2 = sut.GetCompany(cId2);
                 Assert.Equal(cId2, gottenCompany2.Id);
+                db.DetachAll();
             });
         }
 
@@ -69,6 +71,7 @@ namespace Lajet.Tests.DbServiceTests.GetTests
 
                 var gottenCompany = sut.GetCompany(3);
                 Assert.Null(gottenCompany);
+                db.DetachAll();
             });
         }
 
@@ -91,6 +94,7 @@ namespace Lajet.Tests.DbServiceTests.GetTests
 
                 var gottenAd2 = sut.GetAd(adId2);
                 Assert.Equal(adId2, gottenAd2.Id);
+                db.DetachAll();
             });
         }
 
@@ -113,6 +117,7 @@ namespace Lajet.Tests.DbServiceTests.GetTests
 
                 var gottenUser2 = sut.GetUser(userId2);
                 Assert.Equal(userId2, gottenUser2.Id);
+                db.DetachAll();
             });
         }
     }

@@ -39,10 +39,9 @@ namespace Destination_Lajet.Services
             _db.SaveChanges();
         }
 
-        public void AddUser(User user, int companyId)
+        public void AddUser(User user)
         {
-            var c = GetCompany(companyId, true);
-            c.Users.Add(user);
+            _db.User.Add(user);
             _db.SaveChanges();
         }
 
@@ -74,8 +73,7 @@ namespace Destination_Lajet.Services
 
         public void RemoveAd(int id)
         {
-            var a = GetAd(id);
-            _db.Ad.Remove(a); //ERROR TRACKING.
+            _db.Ad.Remove(new Ad() { Id = id });
             _db.SaveChanges();
         }
 
@@ -85,9 +83,12 @@ namespace Destination_Lajet.Services
         /// <param name="id"></param>
         public void RemoveCompany(int id)
         {
-            var c = _db.Company
-                        .Include(x => x.Ads)
-                        .Include(x => x.Users);
+            //var c = _db.Company
+            //            .Include(x => x.Ads)
+            //            .Include(x => x.Users);
+            var c = _db.Company.Include(x => x.Ads).FirstOrDefault(x => x.Id.Equals(id));
+            _db.Company.Remove(c);
+            _db.SaveChanges();
         }
 
         public void RemoveUser(string id)

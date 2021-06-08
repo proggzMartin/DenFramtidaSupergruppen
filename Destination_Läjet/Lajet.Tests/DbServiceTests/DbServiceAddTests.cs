@@ -19,6 +19,7 @@ namespace Lajet.Tests.DbServiceTests.AddTests
 
             PerformDbServiceActions((sut, db) => {
                 Assert.Throws<DbException>(() => sut.AddAd(a, -1));
+                db.DetachAll();
             });
         }
 
@@ -48,6 +49,7 @@ namespace Lajet.Tests.DbServiceTests.AddTests
                 Assert.Contains(a1.Id, cnew.Ads.Select(x => x.Id));
                 Assert.Contains(a2.Id, cnew.Ads.Select(x => x.Id));
                 Assert.DoesNotContain(a3.Id, cnew.Ads.Select(x => x.Id));
+                db.DetachAll();
             });
         }
 
@@ -63,6 +65,7 @@ namespace Lajet.Tests.DbServiceTests.AddTests
 
                 Assert.Equal(cget.Id, c.Id);
                 Assert.Equal(c.Name, cget.Name);
+                db.DetachAll();
             });
         }
 
@@ -72,17 +75,13 @@ namespace Lajet.Tests.DbServiceTests.AddTests
             var uname = "userName";
             var u = new User() { FirstName = uname };
 
-            var cname = "cname";
-            var c = new Company() { Name = cname };
-
             PerformDbServiceActions((sut, db) => {
-                sut.AddNewCompany(c);
-
-                sut.AddUser(u, c.Id);
+                sut.AddUser(u);
                 var uget = sut.GetUser(u.Id);
 
                 Assert.Equal(u.Id, uget.Id);
                 Assert.Equal(u.FirstName, uget.FirstName);
+                db.DetachAll();
             });
         }
     }

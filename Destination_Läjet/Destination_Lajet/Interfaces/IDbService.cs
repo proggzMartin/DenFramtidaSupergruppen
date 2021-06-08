@@ -7,7 +7,7 @@ namespace Destination_Lajet.Interfaces
     {
         void AddAd(Ad ad, int companyId);
         void AddNewCompany(Company company);
-        void AddUser(User user, int companyId);
+        void AddUser(User user);
         IEnumerable<Company> GetAllCompanies(bool tracking = false);
         Company GetCompany(int id, bool tracking = false);
         Ad GetAd(int id, bool tracking = false);

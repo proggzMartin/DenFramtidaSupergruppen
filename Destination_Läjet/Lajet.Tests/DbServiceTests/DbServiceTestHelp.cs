@@ -1,29 +1,26 @@
 ﻿using Destination_Lajet.Data;
 using Destination_Lajet.Services;
+using Microsoft.EntityFrameworkCore;
 using System;
+using System.Linq;
 
 namespace Lajet.Tests.DbServiceTests
 {
-    public class DbServiceTestHelp
+    public static class DbServiceTestHelp
     {
-        public static void PerformDbServiceActions(Action<DbService, LajetContext> test)
+        public static void PerformDbServiceActions(Action<DbService, LajetContext> ActAndTest)
         {
             using var db = TestHelp.CreateInMemLajetContext();
 
-            //if(db.Database.EnsureCreated())
             db.Database.EnsureDeletedAsync();
             db.Database.EnsureCreatedAsync();
             var service = new DbService(db);
-            test.Invoke(service, db);
+            ActAndTest.Invoke(service, db);
+        }
 
-            //if (db.Database.EnsureDeleted())
-            //{
-            //    db.Database.EnsureCreated();
-            //    var service = new DbService(db);
-            //    test.Invoke(service, db);
-            //} else
-            //    throw new SystemException("Mem db not deleted for some reason.");
-            
+        public static void DetachAll(this LajetContext db)
+        {
+            db.ChangeTracker.Entries().ToList().ForEach(x => x.State = EntityState.Detached);
         }
     }
 }

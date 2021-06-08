@@ -21,19 +21,64 @@ namespace Lajet.Tests.DbServiceTests
             };
             var c = new Company() { Name = "c1" };
 
-            PerformDbServiceActions((sut, db) => {
-                sut.AddNewCompany(c);
-                sut.AddAd(a, c.Id);
+            PerformDbServiceActions(
+                ActAndTest: (sut, db) => {
+                    sut.AddNewCompany(c);
+                    sut.AddAd(a, c.Id);
                 
-                var addedAdId = a.Id;
+                    var addedAdId = a.Id;
 
-                sut.RemoveAd(a.Id);
+                    db.DetachAll();
 
-                Assert.Null(sut.GetAd(addedAdId));
+                    sut.RemoveAd(a.Id);
+                    
+                    Assert.Null(sut.GetAd(addedAdId));
             });
         }
-        //void RemoveCompany(int companyId); //removes all advertisements and users.
-        //void RemoveUser(string userId);
 
+        [Fact]
+        public void RemoveCompany_ShouldRemoveCompanyAndAd()
+        {
+            var a = new Ad()
+            {
+                Id = 1,
+                Text = "hej"
+            };
+            var c = new Company() { Name = "c1" };
+            c.Ads = new List<Ad>() { a };
+
+            PerformDbServiceActions(
+                ActAndTest: (sut, db) => {
+                    sut.AddNewCompany(c);
+                    db.DetachAll();
+
+                    sut.RemoveCompany(c.Id);
+
+                    Assert.Null(sut.GetCompany(c.Id));
+                    Assert.Null(sut.GetAd(a.Id));
+
+                }
+            );
+        }
+
+        [Fact]
+        public void RemoveUser_ShouldRemove()
+        {
+            var u = new User()
+            {
+                FirstName = "hej"
+            };
+
+            PerformDbServiceActions(
+                ActAndTest: (sut, db) => {
+                    sut.AddUser(u);
+                    db.DetachAll();
+
+                    sut.RemoveUser(u.Id);
+
+                    Assert.Null(sut.GetUser(u.Id));
+                }
+            );
+        }
     }
 }
