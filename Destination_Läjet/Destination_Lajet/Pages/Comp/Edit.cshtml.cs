@@ -8,29 +8,26 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Destination_Lajet.Data;
 using Destination_Lajet.Models;
+using Destination_Lajet.Interfaces;
 
 namespace Destination_Lajet.Pages.Comp
 {
     public class EditModel : PageModel
     {
-        private readonly Destination_Lajet.Data.LajetContext _context;
-
-        public EditModel(Destination_Lajet.Data.LajetContext context)
+        private readonly IDbService db;
+        private readonly LajetContext _context;
+        public EditModel(IDbService db, LajetContext context)
         {
+            this.db = db;
             _context = context;
         }
 
         [BindProperty]
         public Company Company { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGet(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Company = await _context.Company.FirstOrDefaultAsync(m => m.Id == id);
+            Company = db.GetCompany(id);
 
             if (Company == null)
             {

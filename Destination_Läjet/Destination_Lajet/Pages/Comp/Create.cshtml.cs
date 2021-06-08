@@ -1,22 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Destination_Lajet.Data;
 using Destination_Lajet.Models;
+using Destination_Lajet.Interfaces;
 
 namespace Destination_Lajet.Pages.Comp
 {
     public class CreateModel : PageModel
     {
-        private readonly Destination_Lajet.Data.LajetContext _context;
+        private readonly IDbService db;
 
-        public CreateModel(Destination_Lajet.Data.LajetContext context)
+        public CreateModel(IDbService db)
         {
-            _context = context;
+            this.db = db;
         }
 
         public IActionResult OnGet()
@@ -35,8 +31,7 @@ namespace Destination_Lajet.Pages.Comp
                 return Page();
             }
 
-            _context.Company.Add(Company);
-            await _context.SaveChangesAsync();
+            db.AddNewCompany(Company);
 
             return RedirectToPage("./Index");
         }

@@ -7,51 +7,37 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Destination_Lajet.Data;
 using Destination_Lajet.Models;
+using Destination_Lajet.Interfaces;
 
 namespace Destination_Lajet.Pages.Comp
 {
     public class DeleteModel : PageModel
     {
-        private readonly Destination_Lajet.Data.LajetContext _context;
+        private readonly IDbService db;
 
-        public DeleteModel(Destination_Lajet.Data.LajetContext context)
+        public DeleteModel(IDbService db)
         {
-            _context = context;
+            this.db = db;
         }
 
         [BindProperty]
         public Company Company { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public IActionResult OnGet(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Company = await _context.Company.FirstOrDefaultAsync(m => m.Id == id);
+            Company = db.GetCompany(id);
 
             if (Company == null)
-            {
                 return NotFound();
-            }
             return Page();
         }
 
-        public async Task<IActionResult> OnPostAsync(int? id)
+        public IActionResult OnPost(int id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            Company = await _context.Company.FindAsync(id);
+            Company = db.GetCompany(id);
 
             if (Company != null)
-            {
-                _context.Company.Remove(Company);
-                await _context.SaveChangesAsync();
-            }
+                db.RemoveCompany(Company.Id);
 
             return RedirectToPage("./Index");
         }
