@@ -10,6 +10,5 @@ namespace Destination_Lajet.Models
 
         public List<Ad> Ads { get; set; } = new List<Ad>();
 
-        public List<User> Users { get; set; } = new List<User>();
     }
 }
