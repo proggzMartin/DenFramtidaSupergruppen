@@ -6,6 +6,8 @@
     <title>@ViewData["Title"] - Destination_Lajet</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Asap+Condensed&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -36,17 +38,15 @@
         </div>
     </nav>
     </header>
-    <div class="container">
+    <div class="container-fluid">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
     <footer class="border-top footer text-muted bg-dark text-white text-center">
-        <div class="container">
-            <a href="https://destinationlajet.se/">Destinationlajet.se</a>
-
-           <!-- <a href"mailto:info@destinationlajet.se">info@destinationlajet.se</a>-->
+        <div class="container-footer">
+            <a href="mailto:info@destinationlajet.se" class="text-decoration-none text-white">info@destinationlajet.se</a>
         </div>
     </footer>
 
