@@ -69,3 +69,42 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.container-footer {
+    background-color: rgba(0, 0, 0, 0.91);
+    padding-bottom: 25px;
+    padding-top: 10px;
+    font-family: Asap Condensed, Helvetica, Arial, Lucida, sans serif;
+    font-size: 35px;
+    font-weight: 500;
+}
+
+.container-fluid {
+    background: url(../lib/images/destination-lajet-eka-solnedgang.jpg) no-repeat center fixed;
+    background-size: cover;
+}
+
+.image-container {
+    max-width: 400px;
+}
+
+.text-center {
+    font-family: Asap Condensed, Helvetica, Arial, Lucida, sans serif;
+}
+
+.image2 {
+    display: none;
+}
+
+@media (min-height: 768px) {
+    .container-fluid {
+        background: none;
+        background-size: cover;
+    }
+    .image2 {
+        display: block;
+    }
+    .image1 {
+        display: none;
+    }
+}
