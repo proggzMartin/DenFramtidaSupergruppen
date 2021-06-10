@@ -47,16 +47,16 @@ namespace Destination_Lajet.Areas.Identity.Pages.Account
         public class InputModel
         {
             [Required]
-            [Display(Name = "User Name")]
+            [Display(Name = "Email")]
             public string UserName { get; set; }
 
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "Confirm Email")]
             public string Email { get; set; }
 
             [Required]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
+            [StringLength(100, ErrorMessage = "Lösenord (medlemsnummer", MinimumLength = 0)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }

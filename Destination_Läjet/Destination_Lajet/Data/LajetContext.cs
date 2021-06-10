@@ -25,12 +25,12 @@ namespace Destination_Lajet.Data
             //await roleManager.CreateAsync(new IdentityRole("Admin"));
             //await roleManager.CreateAsync(new IdentityRole("Organizer"));
 
-            //User admin = new User()
-            //{
-            //    UserName = "admin",
-            //    Email = "admin@gmail.com",
-            //    EmailConfirmed = true
-            //};
+            User admin = new User()
+            {
+                UserName = "admin",
+               Email = "admin@gmail.com",
+                EmailConfirmed = true
+            };
 
             //await userManager.CreateAsync(admin, "Passw0rd!");
             //await userManager.AddToRoleAsync(admin, "Admin");
