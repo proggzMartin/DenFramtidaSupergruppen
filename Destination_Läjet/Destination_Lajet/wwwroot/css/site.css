@@ -88,6 +88,24 @@ body {
     max-width: 400px;
 }
 
+
 .text-center {
     font-family: Asap Condensed, Helvetica, Arial, Lucida, sans serif;
+}
+
+.image2 {
+    display: none;
+}
+
+@media (min-height: 768px) {
+    .container-fluid {
+        background: none;
+        background-size: cover;
+    }
+    .image2 {
+        display: block;
+    }
+    .image1 {
+        display: none;
+    }
 }
