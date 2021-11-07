@@ -47,10 +47,11 @@ namespace Destination_Lajet.Data
 
             Ad ads = new Ad()
             {
-                Category = "soda",
+                Title = "Soda",
+                Category = "drinks",
                 Business = "soda_store",
-                Content = "cheap soda",
-                Claims = 100,
+                Text = "cheap soda",
+                Claims = 100
             };
 
             await userManager.CreateAsync(users, "Test123!");
