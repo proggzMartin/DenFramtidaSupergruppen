@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.31112.23
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Destination_Lajet", "Destination_Lajet\Destination_Lajet.csproj", "{249BFA1E-1B50-458D-84D4-2863D5FD109D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lajet.Tests", "Lajet.Tests\Lajet.Tests.csproj", "{19A0B716-E6CD-411B-B27E-C88B070D973E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lajet.Tests", "Lajet.Tests\Lajet.Tests.csproj", "{19A0B716-E6CD-411B-B27E-C88B070D973E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
