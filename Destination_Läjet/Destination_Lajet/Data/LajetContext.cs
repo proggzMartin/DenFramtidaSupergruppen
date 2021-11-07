@@ -15,6 +15,7 @@ namespace Destination_Lajet.Data
         public DbSet<Company> Company { get; set; }
 
         public DbSet<Ad> Ad { get; set; }
+        //public DbSet<Admin> Admins { get; set; }
         public DbSet<User> User { get; set; }
 
         public async Task Seed(UserManager<User> userManager, RoleManager<IdentityRole> roleManager)
@@ -27,6 +28,14 @@ namespace Destination_Lajet.Data
             await roleManager.CreateAsync(new IdentityRole("User"));
 
             await Roles.ToListAsync();
+
+            User admin = new User()
+            {
+                UserName = "admin",
+                Email = "admin@gmail.com",
+                EmailConfirmed = true
+            };
+
 
             User users = new User()
             {
@@ -54,9 +63,11 @@ namespace Destination_Lajet.Data
                 Claims = 100
             };
 
+            await userManager.CreateAsync(admin, "Admin123!");
             await userManager.CreateAsync(users, "Test123!");
             await userManager.CreateAsync(users2, "Test123!");
 
+            await userManager.AddToRoleAsync(admin, "Admin");
             await userManager.AddToRoleAsync(users, "Admin");
             await userManager.AddToRoleAsync(users2, "defaultUser");
 
