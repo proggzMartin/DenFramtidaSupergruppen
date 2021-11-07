@@ -9,7 +9,8 @@ namespace Destination_Lajet.Data
     public class LajetContext : IdentityDbContext<User>
     {
         public LajetContext(DbContextOptions<LajetContext> options) : base(options)
-        { }
+        {
+        }
 
         public DbSet<Company> Company { get; set; }
 
@@ -21,43 +22,50 @@ namespace Destination_Lajet.Data
             await Database.EnsureDeletedAsync();
             await Database.EnsureCreatedAsync();
 
-            //await roleManager.CreateAsync(new IdentityRole("Attendee"));
+            await roleManager.CreateAsync(new IdentityRole("defaultUser"));
             //await roleManager.CreateAsync(new IdentityRole("Admin"));
-            //await roleManager.CreateAsync(new IdentityRole("Organizer"));
+            await roleManager.CreateAsync(new IdentityRole("User"));
 
-            User admin = new User()
+            await Roles.ToListAsync();
+
+            User users = new User()
             {
-                UserName = "admin",
-               Email = "admin@gmail.com",
-                EmailConfirmed = true
+                UserName = "testuser@mail.com",
+                NormalizedUserName = "TESTUSER@MAIL.COM",
+                Email = "testuser@mail.com",
+                NormalizedEmail = "TESTUSER@MAIL.COM",
+                EmailConfirmed = true,
+            };
+            User users2 = new User()
+            {
+                UserName = "testuser2@mail.com",
+                NormalizedUserName = "TEST2@MAIL.COM",
+                Email = "testuser2@mail.com",
+                NormalizedEmail = "TESTUSER2@MAIL.COM",
+                EmailConfirmed = true,
             };
 
-            //await userManager.CreateAsync(admin, "Passw0rd!");
-            //await userManager.AddToRoleAsync(admin, "Admin");
+            Ad ads = new Ad()
+            {
+                Category = "soda",
+                Business = "soda_store",
+                Content = "cheap soda",
+                Claims = 100,
+            };
 
-            /* 
-             User organizer = new User()
-             {
-                 UserName = "organizer",
-                 Email = "organizer@gmail.com",
-             };
+            await userManager.CreateAsync(users, "Test123!");
+            await userManager.CreateAsync(users2, "Test123!");
 
-             await userManager.CreateAsync(organizer, "Passw0rd!");
-             await userManager.AddToRoleAsync(organizer, "Organizer");
-             */
+            await userManager.AddToRoleAsync(users, "Admin");
+            await userManager.AddToRoleAsync(users2, "defaultUser");
 
-            //Advertisement[] Event = new Advertisement[]
-            //{
-            //    new Advertisement() { Title="TheBestEventEver", Text="Event", Place="Halmstad", Address="Stockvägen 12", Date=DateTime.Now, SpotsAvailable=440, },
-            //    new Advertisement() { Title="StarGazing", Text="Stjärnkådning", Place="Halmstad", Address="Wall Street 1", Date=DateTime.Now, SpotsAvailable=144, },
-            //    new Advertisement() { Title="VolleybollMatch", Text="Volleyboll", Place="Dalarna", Address="ELmano road 1", Date=DateTime.Now, SpotsAvailable=255, },
-            //    new Advertisement() { Title="Armbrytning", Text="Styrketräning", Place="Laholm", Address="LaholmLaholmsvägen 21", Date=DateTime.Now, SpotsAvailable=100, },
-            //    new Advertisement() { Title="The2ndBestEventEver", Text="Festival", Place="Hässleholm", Address="Festivalvägen 1", Date=DateTime.Now, SpotsAvailable=422, }
-            //};
-            //await AddRangeAsync(Event);
-
+            Add(ads);
             await SaveChangesAsync();
+
+
+
         }
+
     }
 
 }
