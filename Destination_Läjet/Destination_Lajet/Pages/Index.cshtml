@@ -13,27 +13,33 @@
 <div class="text-center">
     <h1 class="display-4">Welcome  @User.Identity.Name</h1>
     <br />
-    <a asp-page="/Events" type="button" class="btn btn-outline-primary">Find A New Event!</a>
+    <a asp-page="/Events" type="button" class="btn btn-outline-primary">Add an new Ad!</a>
 
 </div> }
 else
 {
 <div class="text-center">
     <div class="image-container">
-         <img src="/lib/images/Dest Läjet Logo A2.png" class="img-fluid image1"/>
-        <img src="~/lib/images/Dest Läjet Logo A.png" class="img-fluid image2"/>
-        <br />  
+        <img src="/lib/images/Dest Läjet Logo A2.png" class="img-fluid image1" />
+        <img src="~/lib/images/Dest Läjet Logo A.png" class="img-fluid image2" />
+        <br />
         <h2 class="text-center text-white">Logga in för att se dina förmåner</h2>
-        <br />  
-    <a asp-area="Identity" asp-page="/Account/Register">
-        <input type="button" class="btn btn-dark" value="Registrera">
-    </a> <a asp-area="Identity" asp-page="/Account/Login">
-        <input type="button" class="btn btn-dark" value="Logga in">
-    </a>
-        <br />  
-        <br />  
-        <br />  
-</div>
+        <br />
+        <a asp-area="Identity" asp-page="/Account/Register">
+            <input type="button" class="btn btn-dark" value="Registrera">
+        </a> <a asp-area="Identity" asp-page="/Account/Login">
+            <input type="button" class="btn btn-dark" value="Logga in">
+        </a>
+        <br />
+        <br />
+        <br />
+        <a asp-area="" asp-page="/AdDetails">
+            <input type="button" class="btn btn-outline-danger" value="AdDetails">
+        </a>
+        <a asp-area="" asp-page="/Comp/Index">
+            <input type="button" class="btn btn-outline-danger" value="Annonser">
+        </a>
+    </div>
 </div>
     }
 </div>
